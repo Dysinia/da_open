@@ -35,6 +35,8 @@ def eval_one_epoch(cfg, args, model, dataloader, epoch_id, logger, dist_test=Fal
 
     dataset = dataloader.dataset
     class_names = dataset.class_names
+    print("class names")
+    print(class_names)
     det_annos = []
 
     if getattr(args, 'infer_time', False):
