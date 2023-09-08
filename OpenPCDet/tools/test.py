@@ -198,7 +198,7 @@ def main():
         dist=dist_test, workers=args.workers, logger=logger, training=False
     )
 
-    print("notice here")
+    # print("notice here")
     # print(cfg.DATA_CONFIG)
     model = build_network(model_cfg=cfg.MODEL, num_class=len(cfg.CLASS_NAMES), dataset=test_set)
     with torch.no_grad():

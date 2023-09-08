@@ -310,8 +310,8 @@ class KittiDataset(DatasetTemplate):
             calib = batch_dict['calib'][batch_index]
             image_shape = batch_dict['image_shape'][batch_index].cpu().numpy()
 
-            # if self.dataset_cfg.get('SHIFT_COOR', None):
-            #     pred_boxes[:, 0:3] -= self.dataset_cfg.SHIFT_COOR
+            if self.dataset_cfg.get('SHIFT_COOR', None):
+                pred_boxes[:, 0:3] -= self.dataset_cfg.SHIFT_COOR
 
             pred_boxes_camera = box_utils.boxes3d_lidar_to_kitti_camera(pred_boxes, calib)
             pred_boxes_img = box_utils.boxes3d_kitti_camera_to_imageboxes(

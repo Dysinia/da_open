@@ -415,16 +415,16 @@ class WaymoDataset(DatasetTemplate):
             from ..kitti.kitti_object_eval_python import eval as kitti_eval
             from ..kitti import kitti_utils
 
-            # map_name_to_kitti = {
-            #     'Vehicle': 'Car',
-            #     'Pedestrian': 'Pedestrian',
-            #     'Cyclist': 'Cyclist',
-            #     'Sign': 'Sign',
-            #     'Car': 'Car'
-            # }
             map_name_to_kitti = {
-                'Vehicle': 'Car'
+                'Vehicle': 'Car',
+                'Pedestrian': 'Pedestrian',
+                'Cyclist': 'Cyclist',
+                'Sign': 'Sign',
+                'Car': 'Car'
             }
+            # map_name_to_kitti = {
+            #     'Vehicle': 'Car'
+            # }
             kitti_utils.transform_annotations_to_kitti_format(eval_det_annos, map_name_to_kitti=map_name_to_kitti)
             kitti_utils.transform_annotations_to_kitti_format(
                 eval_gt_annos, map_name_to_kitti=map_name_to_kitti,
