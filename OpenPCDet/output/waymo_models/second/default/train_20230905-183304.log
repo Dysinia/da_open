@@ -1,0 +1,299 @@
+2023-09-05 18:33:04,828   INFO  **********************Start logging**********************
+2023-09-05 18:33:04,828   INFO  CUDA_VISIBLE_DEVICES=1,2
+2023-09-05 18:33:04,828   INFO  Training in distributed mode : total_batch_size: 8
+2023-09-05 18:33:04,828   INFO  cfg_file         cfgs/waymo_models/second.yaml
+2023-09-05 18:33:04,828   INFO  batch_size       4
+2023-09-05 18:33:04,828   INFO  epochs           1
+2023-09-05 18:33:04,828   INFO  workers          4
+2023-09-05 18:33:04,828   INFO  extra_tag        default
+2023-09-05 18:33:04,828   INFO  ckpt             None
+2023-09-05 18:33:04,828   INFO  pretrained_model None
+2023-09-05 18:33:04,828   INFO  launcher         pytorch
+2023-09-05 18:33:04,828   INFO  tcp_port         18888
+2023-09-05 18:33:04,828   INFO  sync_bn          False
+2023-09-05 18:33:04,828   INFO  fix_random_seed  False
+2023-09-05 18:33:04,828   INFO  ckpt_save_interval 1
+2023-09-05 18:33:04,828   INFO  local_rank       0
+2023-09-05 18:33:04,828   INFO  max_ckpt_save_num 30
+2023-09-05 18:33:04,828   INFO  merge_all_iters_to_one_epoch False
+2023-09-05 18:33:04,828   INFO  set_cfgs         None
+2023-09-05 18:33:04,828   INFO  max_waiting_mins 0
+2023-09-05 18:33:04,828   INFO  start_epoch      0
+2023-09-05 18:33:04,828   INFO  num_epochs_to_eval 0
+2023-09-05 18:33:04,828   INFO  save_to_file     False
+2023-09-05 18:33:04,828   INFO  use_tqdm_to_record False
+2023-09-05 18:33:04,828   INFO  logger_iter_interval 50
+2023-09-05 18:33:04,828   INFO  ckpt_save_time_interval 300
+2023-09-05 18:33:04,828   INFO  wo_gpu_stat      False
+2023-09-05 18:33:04,828   INFO  use_amp          False
+2023-09-05 18:33:04,828   INFO  cfg.ROOT_DIR: /home/uqjmeng4/new_open/OpenPCDet
+2023-09-05 18:33:04,828   INFO  cfg.LOCAL_RANK: 0
+2023-09-05 18:33:04,829   INFO  cfg.CLASS_NAMES: ['Vehicle']
+2023-09-05 18:33:04,829   INFO  ----------- DATA_CONFIG -----------
+2023-09-05 18:33:04,829   INFO  cfg.DATA_CONFIG.DATASET: WaymoDataset
+2023-09-05 18:33:04,829   INFO  cfg.DATA_CONFIG.DATA_PATH: ../data/waymo
+2023-09-05 18:33:04,829   INFO  cfg.DATA_CONFIG.PROCESSED_DATA_TAG: waymo_processed_data_v0_5_0
+2023-09-05 18:33:04,829   INFO  cfg.DATA_CONFIG.POINT_CLOUD_RANGE: [-75.2, -75.2, -2, 75.2, 75.2, 4]
+2023-09-05 18:33:04,829   INFO  ----------- DATA_SPLIT -----------
+2023-09-05 18:33:04,829   INFO  cfg.DATA_CONFIG.DATA_SPLIT.train: train
+2023-09-05 18:33:04,829   INFO  cfg.DATA_CONFIG.DATA_SPLIT.test: val
+2023-09-05 18:33:04,829   INFO  ----------- SAMPLED_INTERVAL -----------
+2023-09-05 18:33:04,829   INFO  cfg.DATA_CONFIG.SAMPLED_INTERVAL.train: 5
+2023-09-05 18:33:04,829   INFO  cfg.DATA_CONFIG.SAMPLED_INTERVAL.test: 1
+2023-09-05 18:33:04,829   INFO  cfg.DATA_CONFIG.FILTER_EMPTY_BOXES_FOR_TRAIN: True
+2023-09-05 18:33:04,829   INFO  cfg.DATA_CONFIG.DISABLE_NLZ_FLAG_ON_POINTS: True
+2023-09-05 18:33:04,829   INFO  cfg.DATA_CONFIG.USE_SHARED_MEMORY: False
+2023-09-05 18:33:04,829   INFO  cfg.DATA_CONFIG.SHARED_MEMORY_FILE_LIMIT: 35000
+2023-09-05 18:33:04,829   INFO  ----------- DATA_AUGMENTOR -----------
+2023-09-05 18:33:04,829   INFO  cfg.DATA_CONFIG.DATA_AUGMENTOR.DISABLE_AUG_LIST: ['placeholder']
+2023-09-05 18:33:04,829   INFO  cfg.DATA_CONFIG.DATA_AUGMENTOR.AUG_CONFIG_LIST: [{'NAME': 'gt_sampling', 'USE_ROAD_PLANE': False, 'DB_INFO_PATH': ['waymo_processed_data_v0_5_0_waymo_dbinfos_train_sampled_1.pkl'], 'USE_SHARED_MEMORY': False, 'DB_DATA_PATH': ['waymo_processed_data_v0_5_0_gt_database_train_sampled_1_global.npy'], 'BACKUP_DB_INFO': {'DB_INFO_PATH': 'waymo_processed_data_v0_5_0_waymo_dbinfos_train_sampled_1_multiframe_-4_to_0.pkl', 'DB_DATA_PATH': 'waymo_processed_data_v0_5_0_gt_database_train_sampled_1_multiframe_-4_to_0_global.npy', 'NUM_POINT_FEATURES': 6}, 'PREPARE': {'filter_by_min_points': ['Vehicle:5', 'Pedestrian:5', 'Cyclist:5'], 'filter_by_difficulty': [-1]}, 'SAMPLE_GROUPS': ['Vehicle:15', 'Pedestrian:10', 'Cyclist:10'], 'NUM_POINT_FEATURES': 5, 'REMOVE_EXTRA_WIDTH': [0.0, 0.0, 0.0], 'LIMIT_WHOLE_SCENE': True}, {'NAME': 'random_world_flip', 'ALONG_AXIS_LIST': ['x', 'y']}, {'NAME': 'random_world_rotation', 'WORLD_ROT_ANGLE': [-0.78539816, 0.78539816]}, {'NAME': 'random_world_scaling', 'WORLD_SCALE_RANGE': [0.95, 1.05]}]
+2023-09-05 18:33:04,829   INFO  ----------- POINT_FEATURE_ENCODING -----------
+2023-09-05 18:33:04,829   INFO  cfg.DATA_CONFIG.POINT_FEATURE_ENCODING.encoding_type: absolute_coordinates_encoding
+2023-09-05 18:33:04,829   INFO  cfg.DATA_CONFIG.POINT_FEATURE_ENCODING.used_feature_list: ['x', 'y', 'z', 'intensity']
+2023-09-05 18:33:04,830   INFO  cfg.DATA_CONFIG.POINT_FEATURE_ENCODING.src_feature_list: ['x', 'y', 'z', 'intensity', 'elongation']
+2023-09-05 18:33:04,830   INFO  cfg.DATA_CONFIG.DATA_PROCESSOR: [{'NAME': 'mask_points_and_boxes_outside_range', 'REMOVE_OUTSIDE_BOXES': True}, {'NAME': 'shuffle_points', 'SHUFFLE_ENABLED': {'train': True, 'test': True}}, {'NAME': 'transform_points_to_voxels', 'VOXEL_SIZE': [0.1, 0.1, 0.15], 'MAX_POINTS_PER_VOXEL': 5, 'MAX_NUMBER_OF_VOXELS': {'train': 150000, 'test': 150000}}]
+2023-09-05 18:33:04,830   INFO  cfg.DATA_CONFIG._BASE_CONFIG_: cfgs/dataset_configs/waymo_dataset.yaml
+2023-09-05 18:33:04,830   INFO  ----------- MODEL -----------
+2023-09-05 18:33:04,830   INFO  cfg.MODEL.NAME: SECONDNet
+2023-09-05 18:33:04,830   INFO  ----------- VFE -----------
+2023-09-05 18:33:04,830   INFO  cfg.MODEL.VFE.NAME: MeanVFE
+2023-09-05 18:33:04,830   INFO  ----------- BACKBONE_3D -----------
+2023-09-05 18:33:04,830   INFO  cfg.MODEL.BACKBONE_3D.NAME: VoxelBackBone8x
+2023-09-05 18:33:04,830   INFO  ----------- MAP_TO_BEV -----------
+2023-09-05 18:33:04,830   INFO  cfg.MODEL.MAP_TO_BEV.NAME: HeightCompression
+2023-09-05 18:33:04,830   INFO  cfg.MODEL.MAP_TO_BEV.NUM_BEV_FEATURES: 256
+2023-09-05 18:33:04,830   INFO  ----------- BACKBONE_2D -----------
+2023-09-05 18:33:04,830   INFO  cfg.MODEL.BACKBONE_2D.NAME: BaseBEVBackbone
+2023-09-05 18:33:04,830   INFO  cfg.MODEL.BACKBONE_2D.LAYER_NUMS: [5, 5]
+2023-09-05 18:33:04,830   INFO  cfg.MODEL.BACKBONE_2D.LAYER_STRIDES: [1, 2]
+2023-09-05 18:33:04,830   INFO  cfg.MODEL.BACKBONE_2D.NUM_FILTERS: [128, 256]
+2023-09-05 18:33:04,830   INFO  cfg.MODEL.BACKBONE_2D.UPSAMPLE_STRIDES: [1, 2]
+2023-09-05 18:33:04,830   INFO  cfg.MODEL.BACKBONE_2D.NUM_UPSAMPLE_FILTERS: [256, 256]
+2023-09-05 18:33:04,830   INFO  ----------- DENSE_HEAD -----------
+2023-09-05 18:33:04,830   INFO  cfg.MODEL.DENSE_HEAD.NAME: AnchorHeadSingle
+2023-09-05 18:33:04,830   INFO  cfg.MODEL.DENSE_HEAD.CLASS_AGNOSTIC: False
+2023-09-05 18:33:04,831   INFO  cfg.MODEL.DENSE_HEAD.USE_DIRECTION_CLASSIFIER: True
+2023-09-05 18:33:04,831   INFO  cfg.MODEL.DENSE_HEAD.DIR_OFFSET: 0.78539
+2023-09-05 18:33:04,831   INFO  cfg.MODEL.DENSE_HEAD.DIR_LIMIT_OFFSET: 0.0
+2023-09-05 18:33:04,831   INFO  cfg.MODEL.DENSE_HEAD.NUM_DIR_BINS: 2
+2023-09-05 18:33:04,831   INFO  cfg.MODEL.DENSE_HEAD.ANCHOR_GENERATOR_CONFIG: [{'class_name': 'Vehicle', 'anchor_sizes': [[4.7, 2.1, 1.7]], 'anchor_rotations': [0, 1.57], 'anchor_bottom_heights': [0], 'align_center': False, 'feature_map_stride': 8, 'matched_threshold': 0.55, 'unmatched_threshold': 0.4}]
+2023-09-05 18:33:04,831   INFO  ----------- TARGET_ASSIGNER_CONFIG -----------
+2023-09-05 18:33:04,831   INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.NAME: AxisAlignedTargetAssigner
+2023-09-05 18:33:04,831   INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.POS_FRACTION: -1.0
+2023-09-05 18:33:04,831   INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.SAMPLE_SIZE: 512
+2023-09-05 18:33:04,831   INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.NORM_BY_NUM_EXAMPLES: False
+2023-09-05 18:33:04,831   INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.MATCH_HEIGHT: False
+2023-09-05 18:33:04,831   INFO  cfg.MODEL.DENSE_HEAD.TARGET_ASSIGNER_CONFIG.BOX_CODER: ResidualCoder
+2023-09-05 18:33:04,831   INFO  ----------- LOSS_CONFIG -----------
+2023-09-05 18:33:04,831   INFO  ----------- LOSS_WEIGHTS -----------
+2023-09-05 18:33:04,831   INFO  cfg.MODEL.DENSE_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.cls_weight: 1.0
+2023-09-05 18:33:04,831   INFO  cfg.MODEL.DENSE_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.loc_weight: 2.0
+2023-09-05 18:33:04,831   INFO  cfg.MODEL.DENSE_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.dir_weight: 0.2
+2023-09-05 18:33:04,831   INFO  cfg.MODEL.DENSE_HEAD.LOSS_CONFIG.LOSS_WEIGHTS.code_weights: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+2023-09-05 18:33:04,831   INFO  ----------- POST_PROCESSING -----------
+2023-09-05 18:33:04,831   INFO  cfg.MODEL.POST_PROCESSING.RECALL_THRESH_LIST: [0.3, 0.5, 0.7]
+2023-09-05 18:33:04,831   INFO  cfg.MODEL.POST_PROCESSING.SCORE_THRESH: 0.1
+2023-09-05 18:33:04,831   INFO  cfg.MODEL.POST_PROCESSING.OUTPUT_RAW_SCORE: False
+2023-09-05 18:33:04,831   INFO  cfg.MODEL.POST_PROCESSING.EVAL_METRIC: kitti
+2023-09-05 18:33:04,831   INFO  ----------- NMS_CONFIG -----------
+2023-09-05 18:33:04,831   INFO  cfg.MODEL.POST_PROCESSING.NMS_CONFIG.MULTI_CLASSES_NMS: False
+2023-09-05 18:33:04,831   INFO  cfg.MODEL.POST_PROCESSING.NMS_CONFIG.NMS_TYPE: nms_gpu
+2023-09-05 18:33:04,831   INFO  cfg.MODEL.POST_PROCESSING.NMS_CONFIG.NMS_THRESH: 0.7
+2023-09-05 18:33:04,831   INFO  cfg.MODEL.POST_PROCESSING.NMS_CONFIG.NMS_PRE_MAXSIZE: 4096
+2023-09-05 18:33:04,831   INFO  cfg.MODEL.POST_PROCESSING.NMS_CONFIG.NMS_POST_MAXSIZE: 500
+2023-09-05 18:33:04,831   INFO  ----------- OPTIMIZATION -----------
+2023-09-05 18:33:04,831   INFO  cfg.OPTIMIZATION.BATCH_SIZE_PER_GPU: 4
+2023-09-05 18:33:04,831   INFO  cfg.OPTIMIZATION.NUM_EPOCHS: 30
+2023-09-05 18:33:04,831   INFO  cfg.OPTIMIZATION.OPTIMIZER: adam_onecycle
+2023-09-05 18:33:04,831   INFO  cfg.OPTIMIZATION.LR: 0.003
+2023-09-05 18:33:04,831   INFO  cfg.OPTIMIZATION.WEIGHT_DECAY: 0.01
+2023-09-05 18:33:04,831   INFO  cfg.OPTIMIZATION.MOMENTUM: 0.9
+2023-09-05 18:33:04,832   INFO  cfg.OPTIMIZATION.MOMS: [0.95, 0.85]
+2023-09-05 18:33:04,832   INFO  cfg.OPTIMIZATION.PCT_START: 0.4
+2023-09-05 18:33:04,832   INFO  cfg.OPTIMIZATION.DIV_FACTOR: 10
+2023-09-05 18:33:04,832   INFO  cfg.OPTIMIZATION.DECAY_STEP_LIST: [35, 45]
+2023-09-05 18:33:04,832   INFO  cfg.OPTIMIZATION.LR_DECAY: 0.1
+2023-09-05 18:33:04,832   INFO  cfg.OPTIMIZATION.LR_CLIP: 1e-07
+2023-09-05 18:33:04,832   INFO  cfg.OPTIMIZATION.LR_WARMUP: False
+2023-09-05 18:33:04,832   INFO  cfg.OPTIMIZATION.WARMUP_EPOCH: 1
+2023-09-05 18:33:04,832   INFO  cfg.OPTIMIZATION.GRAD_NORM_CLIP: 10
+2023-09-05 18:33:04,832   INFO  cfg.TAG: second
+2023-09-05 18:33:04,832   INFO  cfg.EXP_GROUP_PATH: waymo_models
+2023-09-05 18:33:04,916   INFO  ----------- Create dataloader & network & optimizer -----------
+2023-09-05 18:33:29,918   INFO  Database filter by min points Vehicle: 1194368 => 1019925
+2023-09-05 18:33:30,177   INFO  Database filter by difficulty Vehicle: 1019925 => 1019925
+2023-09-05 18:33:31,148   INFO  Loading Waymo dataset
+2023-09-05 18:35:08,980   INFO  Total skipped info 0
+2023-09-05 18:35:08,980   INFO  Total samples for Waymo dataset: 158081
+2023-09-05 18:35:08,996   INFO  Total sampled samples for Waymo dataset: 31617
+2023-09-05 18:35:13,907   INFO  ==> Loading parameters from checkpoint /home/uqjmeng4/new_open/OpenPCDet/output/waymo_models/second/default/ckpt/checkpoint_epoch_20.pth to CPU
+2023-09-05 18:35:13,963   INFO  ==> Loading optimizer parameters from checkpoint /home/uqjmeng4/new_open/OpenPCDet/output/waymo_models/second/default/ckpt/checkpoint_epoch_20.pth to CPU
+2023-09-05 18:35:14,028   INFO  ==> Done
+2023-09-05 18:35:14,132   INFO  ----------- Model SECONDNet created, param count: 5298900 -----------
+2023-09-05 18:35:14,132   INFO  DistributedDataParallel(
+  (module): SECONDNet(
+    (vfe): MeanVFE()
+    (backbone_3d): VoxelBackBone8x(
+      (conv_input): SparseSequential(
+        (0): SubMConv3d(4, 16, kernel_size=[3, 3, 3], stride=[1, 1, 1], padding=[1, 1, 1], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+        (1): BatchNorm1d(16, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+      (conv1): SparseSequential(
+        (0): SparseSequential(
+          (0): SubMConv3d(16, 16, kernel_size=[3, 3, 3], stride=[1, 1, 1], padding=[0, 0, 0], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+          (1): BatchNorm1d(16, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU()
+        )
+      )
+      (conv2): SparseSequential(
+        (0): SparseSequential(
+          (0): SparseConv3d(16, 32, kernel_size=[3, 3, 3], stride=[2, 2, 2], padding=[1, 1, 1], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+          (1): BatchNorm1d(32, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU()
+        )
+        (1): SparseSequential(
+          (0): SubMConv3d(32, 32, kernel_size=[3, 3, 3], stride=[1, 1, 1], padding=[0, 0, 0], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+          (1): BatchNorm1d(32, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU()
+        )
+        (2): SparseSequential(
+          (0): SubMConv3d(32, 32, kernel_size=[3, 3, 3], stride=[1, 1, 1], padding=[0, 0, 0], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+          (1): BatchNorm1d(32, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU()
+        )
+      )
+      (conv3): SparseSequential(
+        (0): SparseSequential(
+          (0): SparseConv3d(32, 64, kernel_size=[3, 3, 3], stride=[2, 2, 2], padding=[1, 1, 1], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+          (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU()
+        )
+        (1): SparseSequential(
+          (0): SubMConv3d(64, 64, kernel_size=[3, 3, 3], stride=[1, 1, 1], padding=[0, 0, 0], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+          (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU()
+        )
+        (2): SparseSequential(
+          (0): SubMConv3d(64, 64, kernel_size=[3, 3, 3], stride=[1, 1, 1], padding=[0, 0, 0], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+          (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU()
+        )
+      )
+      (conv4): SparseSequential(
+        (0): SparseSequential(
+          (0): SparseConv3d(64, 64, kernel_size=[3, 3, 3], stride=[2, 2, 2], padding=[0, 1, 1], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+          (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU()
+        )
+        (1): SparseSequential(
+          (0): SubMConv3d(64, 64, kernel_size=[3, 3, 3], stride=[1, 1, 1], padding=[0, 0, 0], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+          (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU()
+        )
+        (2): SparseSequential(
+          (0): SubMConv3d(64, 64, kernel_size=[3, 3, 3], stride=[1, 1, 1], padding=[0, 0, 0], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+          (1): BatchNorm1d(64, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU()
+        )
+      )
+      (conv_out): SparseSequential(
+        (0): SparseConv3d(64, 128, kernel_size=[3, 1, 1], stride=[2, 1, 1], padding=[0, 0, 0], dilation=[1, 1, 1], output_padding=[0, 0, 0], bias=False, algo=ConvAlgo.MaskImplicitGemm)
+        (1): BatchNorm1d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        (2): ReLU()
+      )
+    )
+    (map_to_bev_module): HeightCompression()
+    (pfe): None
+    (backbone_2d): BaseBEVBackbone(
+      (blocks): ModuleList(
+        (0): Sequential(
+          (0): ZeroPad2d((1, 1, 1, 1))
+          (1): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), bias=False)
+          (2): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (3): ReLU()
+          (4): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (5): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (6): ReLU()
+          (7): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (8): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (9): ReLU()
+          (10): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (11): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (12): ReLU()
+          (13): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (14): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (15): ReLU()
+          (16): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (17): BatchNorm2d(128, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (18): ReLU()
+        )
+        (1): Sequential(
+          (0): ZeroPad2d((1, 1, 1, 1))
+          (1): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), bias=False)
+          (2): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (3): ReLU()
+          (4): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (5): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (6): ReLU()
+          (7): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (8): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (9): ReLU()
+          (10): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (11): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (12): ReLU()
+          (13): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (14): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (15): ReLU()
+          (16): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (17): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (18): ReLU()
+        )
+      )
+      (deblocks): ModuleList(
+        (0): Sequential(
+          (0): ConvTranspose2d(128, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU()
+        )
+        (1): Sequential(
+          (0): ConvTranspose2d(256, 256, kernel_size=(2, 2), stride=(2, 2), bias=False)
+          (1): BatchNorm2d(256, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU()
+        )
+      )
+    )
+    (dense_head): AnchorHeadSingle(
+      (cls_loss_func): SigmoidFocalClassificationLoss()
+      (reg_loss_func): WeightedSmoothL1Loss()
+      (dir_loss_func): WeightedCrossEntropyLoss()
+      (conv_cls): Conv2d(512, 2, kernel_size=(1, 1), stride=(1, 1))
+      (conv_box): Conv2d(512, 14, kernel_size=(1, 1), stride=(1, 1))
+      (conv_dir_cls): Conv2d(512, 4, kernel_size=(1, 1), stride=(1, 1))
+    )
+    (point_head): None
+    (roi_head): None
+  )
+)
+2023-09-05 18:35:14,134   INFO  **********************Start training waymo_models/second(default)**********************
+2023-09-05 18:38:03,909   INFO  **********************End training waymo_models/second(default)**********************
+
+
+
+2023-09-05 18:38:03,910   INFO  **********************Start evaluation waymo_models/second(default)**********************
+2023-09-05 18:38:03,921   INFO  Loading Waymo dataset
+2023-09-05 18:38:22,835   INFO  Total skipped info 0
+2023-09-05 18:38:22,836   INFO  Total samples for Waymo dataset: 39987
+2023-09-05 18:38:22,841   INFO  ==> Loading parameters from checkpoint /home/uqjmeng4/new_open/OpenPCDet/output/waymo_models/second/default/ckpt/checkpoint_epoch_1.pth to CPU
+2023-09-05 18:38:22,899   INFO  ==> Checkpoint trained from version: pcdet+0.6.0+bce886d+pyfcef564
+2023-09-05 18:38:22,930   INFO  ==> Done (loaded 163/163)
+2023-09-05 18:38:22,932   INFO  *************** EPOCH 1 EVALUATION *****************
+2023-09-05 19:11:24,987   INFO  *************** Performance of EPOCH 1 *****************
+2023-09-05 19:11:25,001   INFO  Generate label finished(sec_per_example: 0.0496 second).
+2023-09-05 19:11:25,001   INFO  recall_roi_0.3: 0.000000
+2023-09-05 19:11:25,001   INFO  recall_rcnn_0.3: 0.812688
+2023-09-05 19:11:25,001   INFO  recall_roi_0.5: 0.000000
+2023-09-05 19:11:25,001   INFO  recall_rcnn_0.5: 0.733793
+2023-09-05 19:11:25,001   INFO  recall_roi_0.7: 0.000000
+2023-09-05 19:11:25,001   INFO  recall_rcnn_0.7: 0.409194
+2023-09-05 19:11:25,027   INFO  Average predicted number of objects(39987 samples): 259.051
